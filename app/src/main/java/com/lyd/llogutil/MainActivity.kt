@@ -10,5 +10,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         LLog.i(msg = "Test my log")
+        try {
+            val a = 1 / 0
+        } catch (ex :Exception){
+            LLog.e(msg = ex)
+        }
     }
 }
