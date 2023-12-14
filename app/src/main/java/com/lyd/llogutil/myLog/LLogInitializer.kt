@@ -14,7 +14,7 @@ class LLogInitializer : Initializer<LLog> {
     override fun create(context: Context): LLog {
         val timeCost = measureTimeMillis {
             LLog.apply {
-                setDebug(isLoggable = true, methodNameEnable = true)
+                setDebug(methodNameEnable = true)
                 addInterceptor(LogcatInterceptor())
                 addInterceptor(LinearInterceptor())
                 addInterceptor(PackToLogInterceptor())

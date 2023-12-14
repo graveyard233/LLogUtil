@@ -43,15 +43,13 @@ android {
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
 
     // 协程
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
 }
 
-version = "0.12"
+version = "0.13"
 
 afterEvaluate {
     publishing {
@@ -61,7 +59,7 @@ afterEvaluate {
 
                 groupId = "com.lyd.lib"
                 artifactId = "llog"
-                version = "0.12"
+                version = "0.13"
             }
         }
     }

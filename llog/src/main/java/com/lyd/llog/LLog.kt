@@ -39,11 +39,9 @@ object LLog {
             onetimeTag.set(value)
         }
 
-    private var isLoggable = true
     private var methodNameEnable :Boolean = false
 
-    fun setDebug(isLoggable :Boolean,methodNameEnable :Boolean){
-        LLog.isLoggable = isLoggable
+    fun setDebug(methodNameEnable :Boolean){
         LLog.methodNameEnable = methodNameEnable
     }
 
