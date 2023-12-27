@@ -7,6 +7,12 @@ import java.io.File
 import java.io.FilenameFilter
 import java.text.SimpleDateFormat
 
+/**
+ * 文件管理默认策略
+ * @param logDirectory 文件存储文件夹路径
+ * @param logFileStoreSizeOfMB 每个日志文件最大多少MB
+ * @param logFileMaxNumber 最多存放多少文件
+ * */
 class FileLogDefaultDiskStrategy(
     logDirectory :String,
     val logFileStoreSizeOfMB :Int = 5,
@@ -21,7 +27,6 @@ class FileLogDefaultDiskStrategy(
         return currentFilePathCache?.isMatch(logFilePath) == true
     }
 
-    /**判断是否允许生成日志文件*/
     override fun isAllowCreateLogFile(logTime: Long): Boolean {
         checkAndClearLogFile()
         return true// 我这里没有处理存储空间不够的情况，所以直接返回true

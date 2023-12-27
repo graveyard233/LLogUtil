@@ -2,7 +2,9 @@ package com.lyd.llog.logWrite
 
 import com.lyd.llog.LLog
 
-
+/**
+ * 日志写入默认格式
+ * */
 class LogWriteDefaultFormatStrategy : BaseFormatStrategy() {
 
     companion object{

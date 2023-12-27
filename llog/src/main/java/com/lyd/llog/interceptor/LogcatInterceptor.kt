@@ -11,6 +11,11 @@ import java.io.StringWriter
 //因为 Logcat 拦截器可以接受任何类型的日志，所以被定义为Interceptor<Any>。
 //该拦截器对日志做了格式化：如果是日志是 Throwable 类型的，则在当前日志后追加调用栈，否则将其直接转换为 String。
 
+/**
+ * 日志打印拦截器，使用[Log]打印等级于[LLog.minPrintPriority]~[LLog.maxPrintPriority]的日志
+ *
+ * 不打印的日志不影响传递到后续拦截器
+ * */
 class LogcatInterceptor : Interceptor<Any>(){
 
     override fun log(tag: String, message: Any, priority: Int, chain: Chain, args :List<Any>?) {

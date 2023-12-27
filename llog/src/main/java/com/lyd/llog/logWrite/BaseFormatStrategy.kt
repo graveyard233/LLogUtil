@@ -7,6 +7,7 @@ abstract class BaseFormatStrategy {
 
     /**yyyy-MM-dd HH:mm:ss.SSS*/
     protected val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.CHINA)
+    /**日志写入格式*/
     abstract fun format(
         logTime :Long,
         tag :String,

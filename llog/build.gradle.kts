@@ -49,7 +49,7 @@ dependencies {
 
 }
 
-version = "0.13"
+version = "0.14"
 
 afterEvaluate {
     publishing {
@@ -59,7 +59,7 @@ afterEvaluate {
 
                 groupId = "com.lyd.lib"
                 artifactId = "llog"
-                version = "0.13"
+                version = "0.14"
             }
         }
     }

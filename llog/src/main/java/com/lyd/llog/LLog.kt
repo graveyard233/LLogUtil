@@ -17,8 +17,6 @@ object LLog {
 
     /**不打印日志的标志*/
     const val NONE = 1
-    /**当前日志过滤等级,默认是[DEBUG],用于过滤logcat打印*/
-//    var curPriority = DEBUG
 
     var minPrintPriority = DEBUG
     var maxPrintPriority = ERROR
@@ -111,7 +109,7 @@ object LLog {
         var tempMsg :String? = null
         if (priority == WARN || priority == ERROR){
             if (ex != null){
-                tempMsg = "${message.toString()}:\n     ${getStackTraceString(ex)}"
+                tempMsg = "${message.toString()}:\n${getStackTraceString(ex)}"
             }
         }
         chain.proceed(

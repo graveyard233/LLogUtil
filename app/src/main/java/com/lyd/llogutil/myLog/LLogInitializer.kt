@@ -35,7 +35,7 @@ class LLogInitializer : Initializer<LLog> {
                 )
             }
         }
-        LLog.i(tag = javaClass.simpleName, msg = "---------LLog 初始化完成 耗时$timeCost--------------")
+        LLog.i(msg = "---------LLog 初始化完成 耗时$timeCost--------------")
         return LLog
     }
 

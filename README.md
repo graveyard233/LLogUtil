@@ -60,11 +60,13 @@ try {
     val a = 1 / 0
 } catch (ex :Exception){
     LLog.e(msg = ex)
+    // You can also use classic writing methods: LLog.e(msg = "error:", exception = ex)
 }
 ```
 For more details, please refer to the demo and LLog source code.
 
 ## Control print and write level
+
 LLog use `minPrintPriority` and `maxPrintPriority` control log's print.(when you use LogcatInterceptor)
 
 LLog use `minWritePriority` and `maxWritePriority` control log's write.(when you use or implement WriteInInterceptor)
@@ -74,7 +76,7 @@ You can implement `Interceptor` to custom your Interceptor and log system.
 
 For example: 
 
-Add a report interceptor(send logs to Remote after how many logs being print, just use your imagination)
+Add a report interceptor(send logs to Remote after how many logs being print, just use our imagination)
 
 And use `addInterceptor(interceptor: Interceptor<T>)` to expand your LLog.
 

@@ -10,10 +10,11 @@ import java.io.File
 abstract class BaseLogDiskStrategy(
     val logDirPath :String
 ) {
-    companion object{
-        const val logPrefix = "Log_"
-        const val logSuffix = ".txt"
-    }
+
+    /**日志前缀*/
+    open var logPrefix = "Log_"
+    /**日志后缀*/
+    open var logSuffix = ".txt"
 
     private var currentLogFilePath :String? = null
 
@@ -57,11 +58,11 @@ abstract class BaseLogDiskStrategy(
 
     /**判断日志是否可以输出到文件中*/
     abstract fun isLogFilePathAvailable(logFilePath :String?, logBody :String) :Boolean
-
+    /**判断是否允许生成日志文件*/
     abstract fun isAllowCreateLogFile(logTime :Long) :Boolean
-
+    /**创建日志文件*/
     abstract fun createLogFile(logItem: LogItem): String
-
+    /**日志头信息*/
     abstract fun logHeadInfo() :String?
 
     /**

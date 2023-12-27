@@ -7,7 +7,10 @@ import com.lyd.llog.LLog
 import com.lyd.llog.logExt.LogItem
 
 
-// 以后这个只接收某些类型 只写入某些类型的信息
+/**
+ * 日志写入拦截器，等级处于[LLog.minWritePriority]~[LLog.maxWritePriority]的日志写入本地
+ * @param logWriter 日志写入类，依赖它来写入本地
+ * */
 class WriteInInterceptor(
     private val logWriter: BaseLogWriter
 ) : Interceptor<LogItem>() {

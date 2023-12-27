@@ -36,10 +36,10 @@ abstract class BaseLogWriter {
         })
     }
 
-    //日志输出格式
+    /**日志输出格式*/
     abstract fun getLogcatFormatStrategy(): BaseFormatStrategy
 
-    //获取日志文件夹管理策略
+    /**获取日志文件夹管理策略*/
     abstract fun getLogDiskStrategy(): BaseLogDiskStrategy
 
 
