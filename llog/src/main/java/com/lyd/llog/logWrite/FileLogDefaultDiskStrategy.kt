@@ -1,22 +1,19 @@
-package com.lyd.llogutil.myLog
+package com.lyd.llog.logWrite
 
-import android.os.Build
 import com.lyd.llog.LLog
 import com.lyd.llog.logExt.LogItem
-import com.lyd.llog.logWrite.BaseLogDiskStrategy
-import com.lyd.llogutil.BuildConfig
+
 import java.io.File
 import java.io.FilenameFilter
 import java.text.SimpleDateFormat
-import java.util.Locale
 
-class FileLogDiskStrategyImpl(
+class FileLogDefaultDiskStrategy(
     logDirectory :String,
     val logFileStoreSizeOfMB :Int = 5,
     val logFileMaxNumber :Int = 5
 ): BaseLogDiskStrategy(logDirectory) {
 
-    private val logFileNameDateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss", Locale.CHINA)
+    private val logFileNameDateFormat = SimpleDateFormat("yyyy-MM-dd_HH-mm-ss")
     private var currentFilePathCache : FilePathCache? = null
 
 
@@ -63,13 +60,7 @@ class FileLogDiskStrategyImpl(
     }
 
     override fun logHeadInfo(): String? {
-        return "AppId:${BuildConfig.APPLICATION_ID}" +
-                "\nBuildType:${BuildConfig.BUILD_TYPE}" +
-                "\n应用版本:${BuildConfig.VERSION_NAME}-${BuildConfig.VERSION_CODE}" +
-                "\n设备品牌:${Build.BRAND}" +
-                "\n手机型号:${Build.MODEL}" +
-                "\n系统版本:${Build.VERSION.SDK_INT}" +
-                "\n\n"
+        return "-----------------LOG HEAD---------------------"
     }
 
     private fun checkAndClearLogFile() {

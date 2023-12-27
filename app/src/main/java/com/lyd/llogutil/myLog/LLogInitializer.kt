@@ -8,6 +8,9 @@ import com.lyd.llog.interceptor.LinearInterceptor
 import com.lyd.llog.interceptor.LogcatInterceptor
 import com.lyd.llog.interceptor.PackToLogInterceptor
 import com.lyd.llog.interceptor.WriteInInterceptor
+import com.lyd.llog.logWrite.FileLogDefaultDiskStrategy
+import com.lyd.llog.logWrite.LogDefaultWriter
+import com.lyd.llog.logWrite.LogWriteDefaultFormatStrategy
 import kotlin.system.measureTimeMillis
 
 class LLogInitializer : Initializer<LLog> {
@@ -22,7 +25,7 @@ class LLogInitializer : Initializer<LLog> {
                     WriteInInterceptor(
                         logWriter = LogDefaultWriter(
                             formatStrategy = LogWriteDefaultFormatStrategy(),
-                            diskStrategy = FileLogDiskStrategyImpl(
+                            diskStrategy = FileLogDefaultDiskStrategy(
                                 logDirectory = context.getExternalFilesDir("log")!!.absolutePath,
                                 logFileStoreSizeOfMB = 2,
                                 logFileMaxNumber = 4

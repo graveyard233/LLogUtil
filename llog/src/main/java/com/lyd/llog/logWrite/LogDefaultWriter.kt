@@ -1,8 +1,4 @@
-package com.lyd.llogutil.myLog
-
-import com.lyd.llog.logWrite.BaseFormatStrategy
-import com.lyd.llog.logWrite.BaseLogDiskStrategy
-import com.lyd.llog.logWrite.BaseLogWriter
+package com.lyd.llog.logWrite
 
 
 class LogDefaultWriter(

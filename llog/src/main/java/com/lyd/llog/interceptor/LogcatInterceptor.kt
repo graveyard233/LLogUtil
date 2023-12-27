@@ -17,7 +17,7 @@ class LogcatInterceptor : Interceptor<Any>(){
         if (
             isLoggable(message) &&
             (LLog.minPrintPriority <= priority && priority <= LLog.maxPrintPriority) &&
-            /*LLog.curPriority != LLog.NONE*/!(LLog.minPrintPriority == LLog.NONE && LLog.maxPrintPriority == LLog.NONE)// 当最大最小的值都是NONE，则不输出logcat
+            !(LLog.minPrintPriority == LLog.NONE && LLog.maxPrintPriority == LLog.NONE)// 当最大最小的值都是NONE，则不输出logcat
             )
         {
             Log.println(priority,tag,getFormatLog(message, args))

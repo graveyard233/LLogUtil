@@ -41,10 +41,14 @@ object LLog {
 
     private var methodNameEnable :Boolean = false
 
+    /**
+     * 设置是否在默认tag上附带方法名
+     * */
     fun setDebug(methodNameEnable :Boolean){
         LLog.methodNameEnable = methodNameEnable
     }
 
+    /**添加拦截器*/
     fun <T> addInterceptor(interceptor: Interceptor<T>, isLoggable: (T) -> Boolean = { true }) {
         addInterceptor(interceptors.size, interceptor, isLoggable)
     }
@@ -111,7 +115,7 @@ object LLog {
             }
         }
         chain.proceed(
-            tag = /*tempTag?: createTag()*/thisTag, priority = priority, message = tempMsg ?: message,
+            tag = thisTag, priority = priority, message = tempMsg ?: message,
             args = mutableListOf<Any>(System.currentTimeMillis()).apply { if (!args.isNullOrEmpty()) addAll(args) }// 现在暂时不使用args，使用的时候再把里面的参数放进来
         )
     }

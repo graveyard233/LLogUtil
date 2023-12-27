@@ -1,7 +1,6 @@
-package com.lyd.llogutil.myLog
+package com.lyd.llog.logWrite
 
 import com.lyd.llog.LLog
-import com.lyd.llog.logWrite.BaseFormatStrategy
 
 
 class LogWriteDefaultFormatStrategy : BaseFormatStrategy() {
